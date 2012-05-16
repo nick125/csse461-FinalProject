@@ -3,8 +3,6 @@
 function image = shapeImage(im,camNum)
 %load calibration parameters
 load(strcat('Transformation',int2str(camNum)));
-load(strcat('crop',intstr(camNum)));
+load(strcat('crop',int2str(camNum)));
 %transform
-it = imtransform(im,T);
-%crop
-image = it(c1(2):c2(2),c1(1):c2(1),:);
+image = imtransform(im,T, 'XData', [1 c2(1) - c1(1)], 'YData', [1 c2(2) - c1(2)]);

@@ -64,9 +64,9 @@ save(strcat('Transformation',int2str(camNum)),'T')
 image2 = imtransform(imorig,T);
 figure(2), imshow(image2);
 
-select crop area
+%select crop area
 A = ginput(2);
-c1 = A(1,:);
-c2 = A(2,:);
+c1 = round(A(1,:));
+c2 = round(A(2,:));
 save(strcat('crop',int2str(camNum)),'c1','c2');
 
