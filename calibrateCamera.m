@@ -7,7 +7,5 @@ CAPTURE_YCBCR = 0;
 % Setup the capture device
 device = videoinput(CAPTURE_DRIVER, CAPTURE_DEVICE, CAPTURE_MODE);
 device.ReturnedColorSpace = 'rgb';
-device.TriggerRepeat = Inf;
-device.FrameGrabInterval = 10;
 
 calibrateSingle(getsnapshot(device), 0);
